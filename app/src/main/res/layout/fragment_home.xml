@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.fragment.home.HomeFragment">
+
+    <ImageView
+        android:id="@+id/top_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/top"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageSwitcher
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@id/top_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/home_images"/>
+
+    <LinearLayout
+        android:id="@+id/point_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="350dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/home_images"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/white_circle" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/white_circle" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/white_circle" />
+    </LinearLayout>
+
+    <com.oneapp.oneappandroidapp.view.ImgTxtButton
+        android:id="@+id/btn_AYBK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/knowledgebank"
+        android:text="奥运百科"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_SZZL"
+        app:layout_constraintTop_toBottomOf="@id/home_images" />
+
+    <com.oneapp.oneappandroidapp.view.ImgTxtButton
+        app:layout_constraintHorizontal_weight="1"
+        android:id="@+id/btn_SZZL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@id/btn_AYBK"
+        app:layout_constraintEnd_toStartOf="@id/btn_AYWS"
+        app:layout_constraintTop_toBottomOf="@id/home_images"
+        android:src="@drawable/travel"
+        android:text="数字之旅" />
+
+    <com.oneapp.oneappandroidapp.view.ImgTxtButton
+        android:id="@+id/btn_AYWS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/video"
+        android:text="奥运微视"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/btn_SZZL"
+        app:layout_constraintTop_toBottomOf="@id/home_images" />
+
+
+    <com.oneapp.oneappandroidapp.view.ImgTxtButton
+        android:id="@+id/btn_SHFW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/traffic"
+        android:text="生活服务"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_SZZL"
+        app:layout_constraintTop_toBottomOf="@id/btn_AYBK" />
+
+    <com.oneapp.oneappandroidapp.view.ImgTxtButton
+        app:layout_constraintHorizontal_weight="1"
+        android:id="@+id/btn_AYHD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@id/btn_AYBK"
+        app:layout_constraintEnd_toStartOf="@id/btn_AYWS"
+        app:layout_constraintTop_toBottomOf="@id/btn_AYBK"
+        android:src="@drawable/community"
+        android:text="奥运互动" />
+
+    <com.oneapp.oneappandroidapp.view.ImgTxtButton
+        android:id="@+id/btn_TZCXZ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/favicon"
+        android:text="太子城小镇"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/btn_SZZL"
+        app:layout_constraintTop_toBottomOf="@id/btn_AYBK" />
+
+    <com.oneapp.oneappandroidapp.view.ImgTxtButton
+        android:id="@+id/btn_MORE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/favicon"
+        android:text="更多......"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintEnd_toStartOf="@id/btn_INVALID1"
+        app:layout_constraintTop_toBottomOf="@id/btn_AYHD" />
+
+    <com.oneapp.oneappandroidapp.view.ImgTxtButton
+        android:id="@+id/btn_INVALID1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/btn_MORE"
+        app:layout_constraintEnd_toStartOf="@id/btn_INVALID2"
+        app:layout_constraintTop_toBottomOf="@id/btn_AYHD" />
+
+    <com.oneapp.oneappandroidapp.view.ImgTxtButton
+        android:id="@+id/btn_INVALID2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/btn_INVALID1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_AYHD" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
