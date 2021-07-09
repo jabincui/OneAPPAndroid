@@ -128,38 +128,79 @@
         app:layout_constraintTop_toBottomOf="@id/btn_AYBK" />
 
     <com.oneapp.oneappandroidapp.view.ImgTxtButton
+        android:id="@+id/btn_ELEME"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/traffic"
+        android:text="饿了么"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_FEIZHU"
+        app:layout_constraintTop_toBottomOf="@id/btn_SHFW" />
+
+    <com.oneapp.oneappandroidapp.view.ImgTxtButton
+        app:layout_constraintHorizontal_weight="1"
+        android:id="@+id/btn_FEIZHU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@id/btn_ELEME"
+        app:layout_constraintEnd_toStartOf="@id/btn_GAODE"
+        app:layout_constraintTop_toBottomOf="@id/btn_SHFW"
+        android:src="@drawable/community"
+        android:text="飞猪" />
+
+    <com.oneapp.oneappandroidapp.view.ImgTxtButton
+        android:id="@+id/btn_GAODE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/favicon"
+        android:text="高德地图"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/btn_FEIZHU"
+        app:layout_constraintTop_toBottomOf="@id/btn_SHFW" />
+
+
+    <com.oneapp.oneappandroidapp.view.ImgTxtButton
+        android:id="@+id/btn_MOJI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/favicon"
+        android:text="墨迹天气"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintEnd_toStartOf="@id/btn_YOUKU"
+        app:layout_constraintTop_toBottomOf="@id/btn_ELEME" />
+
+    <com.oneapp.oneappandroidapp.view.ImgTxtButton
+        android:id="@+id/btn_YOUKU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/favicon"
+        android:text="优酷"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/btn_MOJI"
+        app:layout_constraintEnd_toStartOf="@id/btn_MORE"
+        app:layout_constraintTop_toBottomOf="@id/btn_ELEME" />
+
+    <com.oneapp.oneappandroidapp.view.ImgTxtButton
         android:id="@+id/btn_MORE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:src="@drawable/favicon"
-        android:text="更多......"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="更多..."
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintEnd_toStartOf="@id/btn_INVALID1"
-        app:layout_constraintTop_toBottomOf="@id/btn_AYHD" />
-
-    <com.oneapp.oneappandroidapp.view.ImgTxtButton
-        android:id="@+id/btn_INVALID1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-
+        app:layout_constraintStart_toEndOf="@id/btn_YOUKU"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@id/btn_MORE"
-        app:layout_constraintEnd_toStartOf="@id/btn_INVALID2"
-        app:layout_constraintTop_toBottomOf="@id/btn_AYHD" />
+        app:layout_constraintTop_toBottomOf="@id/btn_ELEME" />
 
-    <com.oneapp.oneappandroidapp.view.ImgTxtButton
-        android:id="@+id/btn_INVALID2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
 
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@id/btn_INVALID1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_AYHD" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

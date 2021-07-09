@@ -3,6 +3,7 @@ package com.oneapp.oneappandroidapp.activity.fragment.home;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -10,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
 import androidx.annotation.NonNull;
@@ -18,16 +18,22 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+
+import com.alipay.android.phone.scancode.export.ScanRequest;
+import com.alipay.android.phone.scancode.export.adapter.MPScan;
+import com.mpaas.nebula.adapter.api.MPNebula;
+import com.mpaas.nebula.adapter.api.MPTinyHelper;
 import com.oneapp.oneappandroidapp.R;
 import com.oneapp.oneappandroidapp.activity.LifeServiceActivity;
 import com.oneapp.oneappandroidapp.activity.QaaActivity;
-import com.oneapp.oneappandroidapp.activity.TzcWebActivity;
+import com.oneapp.oneappandroidapp.activity.UniWebActivity;
 import com.oneapp.oneappandroidapp.view.ImgTxtButton;
 
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment implements ViewSwitcher.ViewFactory {
 
+    private static final String TAG = "HomeFragment";
     private HomeViewModel homeViewModel;
     private ImageSwitcher is;
     private LinearLayout point_layout;
@@ -38,6 +44,11 @@ public class HomeFragment extends Fragment implements ViewSwitcher.ViewFactory {
     private ImgTxtButton btn_AYHD;
     private ImgTxtButton btn_TZCXZ;
     private ImgTxtButton btn_MORE;
+    private ImgTxtButton btn_ELEME;
+    private ImgTxtButton btn_FEIZHU;
+    private ImgTxtButton btn_GAODE;
+    private ImgTxtButton btn_MOJI;
+    private ImgTxtButton btn_YOUKU;
 
 
     int[] images = {R.drawable.pic1, R.drawable.pic2, R.drawable.pic3};
@@ -114,7 +125,13 @@ public class HomeFragment extends Fragment implements ViewSwitcher.ViewFactory {
         btn_SHFW = getActivity().findViewById(R.id.btn_SHFW);
         btn_AYHD = getActivity().findViewById(R.id.btn_AYHD);
         btn_TZCXZ = getActivity().findViewById(R.id.btn_TZCXZ);
+        btn_ELEME = getActivity().findViewById(R.id.btn_ELEME);
+        btn_FEIZHU = getActivity().findViewById(R.id.btn_FEIZHU);
+        btn_GAODE = getActivity().findViewById(R.id.btn_GAODE);
         btn_MORE = getActivity().findViewById(R.id.btn_MORE);
+        btn_MOJI = getActivity().findViewById(R.id.btn_MOJI);
+        btn_YOUKU = getActivity().findViewById(R.id.btn_YOUKU);
+
 
         btn_AYBK.setMCallback(v -> {
             Intent intent = new Intent(getActivity().getApplicationContext(), QaaActivity.class);
@@ -132,7 +149,55 @@ public class HomeFragment extends Fragment implements ViewSwitcher.ViewFactory {
 
         btn_TZCXZ.setMCallback(v -> {
             Intent intent = new Intent(getActivity().getApplicationContext(),
-                    TzcWebActivity.class);
+                    UniWebActivity.class);
+            intent.putExtra("url",
+                    "https://720yun.com/t/3e9judskOy4#scene_id=68800528");
+            startActivity(intent);
+
+        });
+        btn_AYWS.setMCallback(v -> {
+            Log.i(TAG, "onStart: ayws");
+            MPNebula.startApp("0000000000000002");
+        });
+        btn_MORE.setMCallback(v -> {
+            Log.i(TAG, "onStart: more");
+            ScanRequest request = new ScanRequest();
+            request.setScanType(ScanRequest.ScanType.QRCODE);
+            MPScan.startMPaasScanActivity(getActivity(), request, (b, intent) -> {
+                if (null != intent && null != intent.getData()) {
+                    MPTinyHelper.getInstance().launchIdeQRCode(intent.getData(), new Bundle());
+                }
+            });
+        });
+        btn_ELEME.setMCallback(v -> {
+            Intent intent = new Intent(getActivity().getApplicationContext(),
+                    UniWebActivity.class);
+            intent.putExtra("url", "https://h5.ele.me");
+            startActivity(intent);
+        });
+        btn_FEIZHU.setMCallback(v -> {
+            Intent intent = new Intent(getActivity().getApplicationContext(),
+                    UniWebActivity.class);
+            intent.putExtra("url",
+                    "https://market.m.taobao.com/app/trip/rx-home/pages/home?_projVer=1.0.2");
+            startActivity(intent);
+        });
+        btn_GAODE.setMCallback(v -> {
+            Intent intent = new Intent(getActivity().getApplicationContext(),
+                    UniWebActivity.class);
+            intent.putExtra("url", "https://m.amap.com");
+            startActivity(intent);
+        });
+        btn_MOJI.setMCallback(v -> {
+            Intent intent = new Intent(getActivity().getApplicationContext(),
+                    UniWebActivity.class);
+            intent.putExtra("url", "http://m.moji.com");
+            startActivity(intent);
+        });
+        btn_YOUKU.setMCallback(v -> {
+            Intent intent = new Intent(getActivity().getApplicationContext(),
+                    UniWebActivity.class);
+            intent.putExtra("url", "https://www.youku.com");
             startActivity(intent);
         });
     }

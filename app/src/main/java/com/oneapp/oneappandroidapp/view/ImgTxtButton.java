@@ -3,6 +3,7 @@ package com.oneapp.oneappandroidapp.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
 import com.oneapp.oneappandroidapp.R;
 
@@ -26,6 +28,7 @@ public class ImgTxtButton extends RelativeLayout {
      * new 实例化时用
      * @param context
      */
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public ImgTxtButton(Context context) {
         this(context, null);
     }
@@ -35,15 +38,18 @@ public class ImgTxtButton extends RelativeLayout {
      * @param context
      * @param attrs
      */
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public ImgTxtButton(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public ImgTxtButton(Context context, @Nullable AttributeSet attrs, int defaultStyle) {
         this(context, attrs, defaultStyle, 0);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public ImgTxtButton(Context context, AttributeSet attrs, int defaultStyle, int defStyleRes) {
         super(context, attrs, defaultStyle, defStyleRes);
         // layout HERE

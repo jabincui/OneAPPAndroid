@@ -1,11 +1,9 @@
-package com.oneapp.oneappandroidapp.activity;
+package com.oneapp.oneappandroidapp;
 
 import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.oneapp.oneappandroidapp.R;
 import com.oneapp.oneappandroidapp.service.MyService;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
