@@ -6,27 +6,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.fragment.assistant.AssistantFragment">
+<!--<androidx.recyclerview.widget.RecyclerView-->
+<!--    android:id="@+id/recycler_qaa_msg_ast"-->
+<!--    app:layout_constraintTop_toTopOf="parent"-->
+<!--    app:layout_constraintBottom_toTopOf="@id/edt_question_ast"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="0dp">-->
+<!--</androidx.recyclerview.widget.RecyclerView>-->
 
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="80dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="请帮我打开空调"
-        android:id="@+id/btn_http_test"/>
+<!--&lt;!&ndash;    android:background="@null"&ndash;&gt;-->
+<!--<AutoCompleteTextView-->
+<!--    android:id="@+id/edt_question_ast"-->
+<!--    android:completionThreshold="1"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--    android:layout_marginBottom="60dp"-->
+<!--    android:layout_width="330dp"-->
+<!--    android:layout_height="wrap_content">-->
+<!--</AutoCompleteTextView>-->
 
-    <TextView
-        android:id="@+id/txt_http_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--<Button-->
+<!--    android:id="@+id/btn_send_ast"-->
+<!--    android:text="发送"-->
+<!--    android:textSize="18sp"-->
+<!--    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--    app:layout_constraintStart_toEndOf="@id/edt_question_ast"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    android:layout_marginBottom="60dp"-->
+<!--    android:layout_width="80dp"-->
+<!--    android:layout_height="wrap_content">-->
+
+<!--</Button>-->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

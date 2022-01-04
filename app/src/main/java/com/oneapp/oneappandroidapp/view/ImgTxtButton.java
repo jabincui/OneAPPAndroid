@@ -63,12 +63,9 @@ public class ImgTxtButton extends RelativeLayout {
         if (src != null) imageView.setImageDrawable(src);
         ta.recycle();
 
-        imageView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mCallback != null) {
-                    mCallback.onclick(v);
-                }
+        imageView.setOnClickListener(v -> {
+            if (mCallback != null) {
+                mCallback.onclick(v);
             }
         });
         textView.setOnClickListener(v -> {

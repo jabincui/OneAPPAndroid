@@ -22,9 +22,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -78,8 +83,8 @@ public class QaaActivity extends AppCompatActivity {
                 msgView.scrollToPosition(msgList.size() - 1);
                 question = content;
                 edtInput.setText("");
-
-                QaaMsg receive = new QaaMsg("小助手正在思考您的问题...", QaaMsg.RECEIVE);
+                DateFormat df = DateFormat.getTimeInstance(DateFormat.MEDIUM, Locale.CHINA);
+                QaaMsg receive = new QaaMsg("[" + df.format(new Date()) + "]小助手正在思考您的问题...", QaaMsg.RECEIVE);
                 msgList.add(receive);
                 adapter.notifyItemInserted(msgList.size() - 1);
                 msgView.scrollToPosition(msgList.size() - 1);
@@ -127,8 +132,8 @@ public class QaaActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
-            QaaMsg receive = new QaaMsg(ans, QaaMsg.RECEIVE);
+            DateFormat df = DateFormat.getTimeInstance(DateFormat.MEDIUM, Locale.CHINA);
+            QaaMsg receive = new QaaMsg("[" + df.format(new Date()) + "]" + ans, QaaMsg.RECEIVE);
             msgList.add(receive);
             adapter.notifyItemInserted(msgList.size() - 1);
             msgView.scrollToPosition(msgList.size() - 1);
@@ -151,7 +156,7 @@ public class QaaActivity extends AppCompatActivity {
                     .readTimeout(180, TimeUnit.SECONDS).build();
             Response resp;
             Log.d(TAG, "run: " + question);
-            String url = "https://oneapp.businsight.net/faq?q=" + question;
+            String url = "https://oneapp.businsight.net/faq?q=" + question + '/';
             Request req = new Request.Builder().url(url).build();
 //            req = new Request.Builder().url("https://www.baidu.com/").build();
             Call call = cli.newCall(req);

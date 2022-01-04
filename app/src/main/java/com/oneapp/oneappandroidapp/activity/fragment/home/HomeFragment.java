@@ -1,5 +1,7 @@
 package com.oneapp.oneappandroidapp.activity.fragment.home;
 
+import static android.app.Activity.RESULT_OK;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,9 +26,12 @@ import com.alipay.android.phone.scancode.export.adapter.MPScan;
 import com.mpaas.nebula.adapter.api.MPNebula;
 import com.mpaas.nebula.adapter.api.MPTinyHelper;
 import com.oneapp.oneappandroidapp.R;
+import com.oneapp.oneappandroidapp.activity.DashboardActivity;
 import com.oneapp.oneappandroidapp.activity.LifeServiceActivity;
+import com.oneapp.oneappandroidapp.activity.NotificationTestActivity;
 import com.oneapp.oneappandroidapp.activity.QaaActivity;
 import com.oneapp.oneappandroidapp.activity.UniWebActivity;
+import com.oneapp.oneappandroidapp.activity.VolunteerDashboardActivity;
 import com.oneapp.oneappandroidapp.view.ImgTxtButton;
 
 import java.util.ArrayList;
@@ -57,6 +62,8 @@ public class HomeFragment extends Fragment implements ViewSwitcher.ViewFactory {
     int index;  // 声明index，记录图片id数组下标
     float startX;  // 手指接触屏幕时X的坐标（演示左右滑动）
     float endX;  // 手指离开屏幕时的坐标（演示左右滑动）
+
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -133,20 +140,21 @@ public class HomeFragment extends Fragment implements ViewSwitcher.ViewFactory {
         btn_YOUKU = getActivity().findViewById(R.id.btn_YOUKU);
 
 
+        // 奥运百科
         btn_AYBK.setMCallback(v -> {
             Intent intent = new Intent(getActivity().getApplicationContext(), QaaActivity.class);
             startActivity(intent);
         });
-
+        // 数字之旅
         btn_SSZL.setMCallback(v -> {
         });
-
+        // 生活服务
         btn_SHFW.setMCallback(v -> {
             Intent intent = new Intent(getActivity().getApplicationContext(),
                     LifeServiceActivity.class);
             startActivity(intent);
         });
-
+        // 太子城小镇
         btn_TZCXZ.setMCallback(v -> {
             Intent intent = new Intent(getActivity().getApplicationContext(),
                     UniWebActivity.class);
@@ -155,10 +163,13 @@ public class HomeFragment extends Fragment implements ViewSwitcher.ViewFactory {
             startActivity(intent);
 
         });
+        // 奥运微视
         btn_AYWS.setMCallback(v -> {
             Log.i(TAG, "onStart: ayws");
-            MPNebula.startApp("0000000000000002");
+//            MPNebula.startApp("0000000000000002");
+            MPNebula.startApp("1234123412340001");
         });
+        // 更多
         btn_MORE.setMCallback(v -> {
             Log.i(TAG, "onStart: more");
             ScanRequest request = new ScanRequest();
@@ -169,12 +180,14 @@ public class HomeFragment extends Fragment implements ViewSwitcher.ViewFactory {
                 }
             });
         });
+        // 饿了么
         btn_ELEME.setMCallback(v -> {
             Intent intent = new Intent(getActivity().getApplicationContext(),
                     UniWebActivity.class);
             intent.putExtra("url", "https://h5.ele.me");
             startActivity(intent);
         });
+        // 飞猪
         btn_FEIZHU.setMCallback(v -> {
             Intent intent = new Intent(getActivity().getApplicationContext(),
                     UniWebActivity.class);
@@ -182,24 +195,41 @@ public class HomeFragment extends Fragment implements ViewSwitcher.ViewFactory {
                     "https://market.m.taobao.com/app/trip/rx-home/pages/home?_projVer=1.0.2");
             startActivity(intent);
         });
+        // 高德
         btn_GAODE.setMCallback(v -> {
             Intent intent = new Intent(getActivity().getApplicationContext(),
                     UniWebActivity.class);
             intent.putExtra("url", "https://m.amap.com");
             startActivity(intent);
         });
+        // 墨迹天气
         btn_MOJI.setMCallback(v -> {
             Intent intent = new Intent(getActivity().getApplicationContext(),
                     UniWebActivity.class);
             intent.putExtra("url", "http://m.moji.com");
             startActivity(intent);
         });
+        // 优酷
         btn_YOUKU.setMCallback(v -> {
             Intent intent = new Intent(getActivity().getApplicationContext(),
                     UniWebActivity.class);
             intent.putExtra("url", "https://www.youku.com");
             startActivity(intent);
         });
+        // 数字之旅
+        btn_SSZL.setMCallback(v -> {
+            Intent intent = new Intent(getActivity().getApplicationContext(),
+                    VolunteerDashboardActivity.class);
+            Intent intent1 = new Intent(getActivity().getApplicationContext(),
+                    DashboardActivity.class);
+            startActivity(intent);
+        });
+        btn_AYHD.setMCallback(v -> {
+            Intent intent = new Intent(getActivity().getApplicationContext(),
+                    NotificationTestActivity.class);
+            startActivity(intent);
+        });
+
     }
 
     private void initPnt() {

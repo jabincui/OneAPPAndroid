@@ -32,6 +32,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OneAPPAndroidApp">
+        <activity
+            android:name=".activity.DuoLunActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.DashboardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.NotificationTestActivity"
+            android:exported="true" />
+        <activity android:name=".activity.VolunteerDashboardActivity" />
         <activity android:name=".activity.UniWebActivity" />
 
         <meta-data
